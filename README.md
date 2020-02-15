@@ -1,3 +1,15 @@
+## About my printer
+
+### The Important Stuff (affects the configuration)
+- [Creality Ender 3](https://smile.amazon.com/Official-Creality-3D-Printer-Source/dp/B07D218NX3/)
+- [SKR mini E3 v1.2](https://smile.amazon.com/gp/product/B07XYW21J3/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
+- [BLTouch](https://smile.amazon.com/gp/product/B076PQG1FF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+- [BLTouch Mount](https://www.thingiverse.com/thing:3148733)
+- Auto PID temperature calibration. You should rerun this on your own printer. 
+- A lot of configuration options from [here](https://www.reddit.com/r/ender3/comments/e894j7/marlin_20x_guide_for_ender_3_using_skr_mini_e3_v12/).
+
+
+
 # Marlin 3D Printer Firmware
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
