@@ -936,7 +936,7 @@
 // rnnazare: 
 // X & Y derived from https://www.thingiverse.com/thing:3148733
 // Z depends on your setup
-#define NOZZLE_TO_PROBE_OFFSET { -44, -14, -2.2 } 
+#define NOZZLE_TO_PROBE_OFFSET { -42, -5, -2.55 } 
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
