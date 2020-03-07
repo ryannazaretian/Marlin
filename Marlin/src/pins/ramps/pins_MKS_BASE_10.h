@@ -19,42 +19,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+#pragma once
 
 /**
- * Arduino SdFat Library
- * Copyright (c) 2008 by William Greiman
+ * MKS BASE 1.0 – Arduino Mega2560 with RAMPS v1.4 pin assignments
  *
- * This file is part of the Arduino Sd2Card Library
+ * Rev B - Override pin definitions for CASE_LIGHT and M3/M4/M5 spindle control
  */
 
-#include "../inc/MarlinConfig.h"
-
-#if ENABLED(SDSUPPORT)
-
-#include "SdFatUtil.h"
-#include <string.h>
-
-/**
- * Amount of free RAM
- * \return The number of free bytes.
- */
-#ifdef __arm__
-
-  extern "C" char* sbrk(int incr);
-  int SdFatUtil::FreeRam() {
-    char top;
-    return &top - reinterpret_cast<char*>(sbrk(0));
-  }
-
-#else
-
-  extern char* __brkval;
-  extern char __bss_end;
-  int SdFatUtil::FreeRam() {
-    char top;
-    return __brkval ? &top - __brkval : &top - &__bss_end;
-  }
-
+#if HOTENDS > 2 || E_STEPPERS > 2
+  #error "MKS BASE 1.0 supports up to 2 hotends / E-steppers. Comment out this line to continue."
 #endif
 
-#endif // SDSUPPORT
+#define BOARD_INFO_NAME "MKS BASE 1.0"
+#define MKS_BASE_VERSION 10
+
+#include "pins_MKS_BASE_common.h"

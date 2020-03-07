@@ -19,42 +19,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+#pragma once
 
 /**
- * Arduino SdFat Library
- * Copyright (c) 2008 by William Greiman
+ * Pin assignments for the MKS RUMBA32
  *
- * This file is part of the Arduino Sd2Card Library
+ * https://aus3d.com.au/rumba32
+ * https://github.com/Aus3D/RUMBA32
+ *
+ * The MKS and Aus3D versions have the same pinout but the MKS version
+ * has some added resistors and LEDs.  The resistors needed for the
+ * TMC2208/9 UART interface are among the additions.  Also added were
+ * connectors and resistors dedicated to the TMC2130 sensorless homing
+ * interface.
  */
 
-#include "../inc/MarlinConfig.h"
+#define BOARD_INFO_NAME "Aus3D RUMBA32"
 
-#if ENABLED(SDSUPPORT)
+#define RUMBA32_V1_0
+//#define I2C_EEPROM
 
-#include "SdFatUtil.h"
-#include <string.h>
-
-/**
- * Amount of free RAM
- * \return The number of free bytes.
- */
-#ifdef __arm__
-
-  extern "C" char* sbrk(int incr);
-  int SdFatUtil::FreeRam() {
-    char top;
-    return &top - reinterpret_cast<char*>(sbrk(0));
-  }
-
-#else
-
-  extern char* __brkval;
-  extern char __bss_end;
-  int SdFatUtil::FreeRam() {
-    char top;
-    return __brkval ? &top - __brkval : &top - &__bss_end;
-  }
-
-#endif
-
-#endif // SDSUPPORT
+#include "pins_RUMBA32_common.h"
