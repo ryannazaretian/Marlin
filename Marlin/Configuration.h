@@ -909,8 +909,6 @@
   #define Z_PROBE_RETRACT_X X_MAX_POS
 #endif
 
-<<<<<<< HEAD
-=======
 // Duet Smart Effector (for delta printers) - https://bit.ly/2ul5U7J
 // When the pin is defined you can use M672 to set/reset the probe sensivity.
 //#define DUET_SMART_EFFECTOR
@@ -926,7 +924,6 @@
  */
 //#define SENSORLESS_PROBING
 
->>>>>>> upstream/2.0.x
 //
 // For Z_PROBE_ALLEN_KEY see the Delta example configurations.
 //
@@ -955,7 +952,7 @@
 // rnnazare: 
 // X & Y derived from https://www.thingiverse.com/thing:3148733
 // Z depends on your setup
-#define NOZZLE_TO_PROBE_OFFSET { -42, -5, -1.7 } 
+#define NOZZLE_TO_PROBE_OFFSET { -42, -5, -1.95 } 
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -968,7 +965,7 @@
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 4)
 
 /**
  * Multiple Probing
@@ -979,7 +976,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
+#define MULTIPLE_PROBING 3
 //#define EXTRA_PROBING    1
 
 /**
